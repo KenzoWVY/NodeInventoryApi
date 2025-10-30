@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Buscar Item</title>
+    </head>
+    <body>
+        <h1>Buscar Item</h1>
+        <form action="/search" method="POST">
+            <label for="id">Buscar por ID:</label>
+            <input type="text" id="id" name="id" required>
+            <button type="submit">Buscar</button>
+        </form>
+        <form action="/search" method="POST">
+            <label for="name">Buscar por Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Buscar</button>
+        </form>
+        <button><a href="/">Voltar</a></button>
+    </body>
+</html>

@@ -52,6 +52,24 @@ async function postNew(req, res) {
     res.redirect("/");
 }
 
+async function getSearch(req, res) {
+    res.render("search");
+}
+
+async function postSearch(req, res) {
+    let idSearch = parseInt(req.body.id);
+    if (isNaN(idSearch)) idSearch = 0;
+    const foundItems = await prisma.item.findMany({
+        where: {
+            OR: [
+                { id: idSearch },
+                { name: req.body.name }
+            ]
+        }
+    });
+    res.render("list", { items: foundItems });
+}
+
 async function getUpdate(req, res) {
     res.render("update");
 }
@@ -74,10 +92,12 @@ async function getDelete(req, res) {
 }
 
 async function postDelete(req, res) {
+    let idSearch = parseInt(req.body.id);
+    if (isNaN(idSearch)) idSearch = 0;
     await prisma.item.deleteMany({
         where: {
             OR: [
-                { id: parseInt(req.body.id) },
+                { id: idSearch },
                 { name: req.body.name }
             ]
         }
@@ -91,6 +111,8 @@ module.exports = {
     getBuy,
     postBuy,
     getNew,
+    getSearch,
+    postSearch,
     postNew,
     getUpdate,
     postUpdate,

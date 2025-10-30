@@ -13,6 +13,9 @@ inventoryRouter.post("/buy", inventoryController.postBuy);
 inventoryRouter.get("/new", inventoryController.getNew);
 inventoryRouter.post("/new", inventoryController.postNew);
 
+inventoryRouter.get("/search", inventoryController.getSearch);
+inventoryRouter.post("/search", inventoryController.postSearch);
+
 inventoryRouter.get("/update", inventoryController.getUpdate);
 inventoryRouter.post("/update", inventoryController.postUpdate);
 
