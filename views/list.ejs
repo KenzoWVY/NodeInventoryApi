@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Itens do Inventário</title>
+    </head>
+    <body>
+        <h1>Itens do Inventário</h1>
+        <ul>
+            <% items.forEach(item => { %>
+                <li>Nome: <%= item.name %></li>
+                <ul>
+                    <li>ID: <%= item.id %></li>
+                    <li>Descrição: <%= item.description %></li>
+                    <li>Preço: <%= item.price %></li>
+                    <li>Quantidade: <%= item.quantity %></li>
+                </ul>
+            <% }) %>
+            <% if (items.length === 0) { %>
+                <li>Nenhum item encontrado.</li>
+            <% } %>
+        </ul>
+        <button><a href="/">Voltar</a></button>
+    </body>
+</html>

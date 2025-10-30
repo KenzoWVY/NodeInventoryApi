@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Buscar Item</title>
+    </head>
+    <body>
+        <h1>Buscar Item</h1>
+        <form method="POST" action="/buy">
+            <label>ID:</label>
+            <br>
+            <input type="text" name="id">
+            <br>
+            <label>Quantidade:</label>
+            <br>
+            <input type="text" name="quantity">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+        <button><a href="/">Voltar</a></button>
+            <% if (typeof error !== 'undefined') { %>
+                <p style="color: red;"><%= error %></p>
+            <% } %>
+    </body>
+</html>
