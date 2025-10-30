@@ -3,19 +3,19 @@
         <title>Atualizar Item</title>
     </head>
     <body>
-        <h1>Novo Item</h1>
+        <h1>Atualizar Item</h1>
         <form action="/update" method="POST">
             <label for="id">ID:</label>
-            <input type="text" id="id" name="id" required>
+            <input type="text" id="id" name="id" readonly value="<%= item.id %>" required>
             <br>
             <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required value="<%= item.name %>">
             <label for="description">Descrição:</label>
-            <input type="text" id="description" name="description">
+            <input type="text" id="description" name="description" value="<%= item.description %>">
             <label for="price">Preço:</label>
-            <input type="number" id="price" name="price" step="0.01" required>
+            <input type="number" id="price" name="price" step="0.01" required value="<%= item.price %>">
             <label for="quantity">Quantidade:</label>
-            <input type="number" id="quantity" name="quantity" min="0" required>
+            <input type="number" id="quantity" name="quantity" min="0" required value="<%= item.quantity %>">
             <button type="submit">Atualizar Item</button>
         </form>
         <button><a href="/">Voltar</a></button>

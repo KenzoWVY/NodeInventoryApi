@@ -67,11 +67,11 @@ async function postSearch(req, res) {
             ]
         }
     });
-    res.render("list", { items: foundItems });
-}
-
-async function getUpdate(req, res) {
-    res.render("update");
+    if (foundItems.length === 0) {
+        res.render("index");
+    } else {
+        res.render("update", { item: foundItems[0] });
+    }
 }
 
 async function postUpdate(req, res) {
@@ -114,7 +114,6 @@ module.exports = {
     getSearch,
     postSearch,
     postNew,
-    getUpdate,
     postUpdate,
     getDelete,
     postDelete
